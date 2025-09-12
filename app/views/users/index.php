@@ -6,33 +6,36 @@
   <title>Index</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-emerald-400 to-teal-600 min-h-screen flex items-center justify-center">
+<body class="bg-gradient-to-br from-gray-100 to-gray-300 min-h-screen flex items-center justify-center p-6">
 
-  <div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-5xl border border-gray-200">
+  <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-6xl border border-gray-300">
+    
     <!-- Header -->
-    <h1 class="text-3xl font-extrabold text-center mb-8 text-emerald-700 tracking-wide">User Records</h1>
+    <h1 class="text-4xl font-bold text-center mb-10 text-indigo-700 tracking-wide uppercase">User Records</h1>
 
-    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
-      <table class="w-full border-collapse">
-        <thead>
-          <tr class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-left">
-            <th class="px-6 py-3 border">ID</th>
-            <th class="px-6 py-3 border">Username</th>
-            <th class="px-6 py-3 border">Email</th>
-            <th class="px-6 py-3 border">Action</th>
+    <!-- Table -->
+    <div class="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+      <table class="min-w-full divide-y divide-gray-200 text-sm text-gray-700">
+        <thead class="bg-indigo-600 text-white text-sm uppercase tracking-wider">
+          <tr>
+            <th class="px-6 py-4 text-left">ID</th>
+            <th class="px-6 py-4 text-left">Username</th>
+            <th class="px-6 py-4 text-left">Email</th>
+            <th class="px-6 py-4 text-center">Action</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-gray-200">
+        <tbody class="bg-white divide-y divide-gray-200">
           <?php foreach (html_escape($users) as $user): ?> 
-            <tr class="hover:bg-emerald-50 transition duration-200">
-              <td class="px-6 py-3 border text-center font-medium text-gray-700"><?= $user['id']; ?></td>
-              <td class="px-6 py-3 border text-gray-800"><?= $user['username']; ?></td>
-              <td class="px-6 py-3 border text-gray-600"><?= $user['email']; ?></td>
-              <td class="px-6 py-3 border text-center">
+            <tr class="hover:bg-gray-100 transition duration-200">
+              <td class="px-6 py-4 font-medium"><?= $user['id']; ?></td>
+              <td class="px-6 py-4"><?= $user['username']; ?></td>
+              <td class="px-6 py-4"><?= $user['email']; ?></td>
+              <td class="px-6 py-4 text-center">
                 <a href="<?= site_url('users/update/'.$user['id']); ?>" 
-                   class="text-blue-600 font-semibold hover:text-blue-800 transition">Update</a> | 
+                   class="text-indigo-600 font-semibold hover:text-indigo-800 transition">Update</a>
+                |
                 <a href="<?= site_url('users/delete/'.$user['id']); ?>" 
-                   class="text-red-600 font-semibold hover:text-red-800 transition">Delete</a>
+                   class="text-red-500 font-semibold hover:text-red-700 transition">Delete</a>
               </td>
             </tr>
           <?php endforeach; ?>
@@ -41,12 +44,13 @@
     </div>
 
     <!-- Create Button -->
-    <div class="mt-6 text-center">
+    <div class="mt-8 text-center">
       <a href="<?= site_url('users/create');?>" 
-         class="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-lg shadow-md font-bold hover:from-emerald-700 hover:to-teal-700 hover:shadow-lg transition">
+         class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md shadow-md font-semibold transition duration-300">
         + Create New Record
       </a>
     </div>
+    
   </div>
 </body>
 </html>
