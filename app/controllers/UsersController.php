@@ -1,4 +1,3 @@
-
 <?php
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
@@ -86,20 +85,20 @@ class UsersController extends Controller {
                 'username' => $username,
                 'email' => $email
             );
-            if($this->Usersmodel->update($id, $data)) {
+            if($this->UsersModel->update($id, $data)) {
                 redirect();
             } else {
                 echo "Error updating record.";
             }
         } else {
-            $data['users'] = $user;
+            $data['user'] = $user;
             $this->call->view('users/update', $data);
         }
     }
 
     function delete($id)
     {
-        if($this->Usersmodel->delete($id)) {
+        if($this->UsersModel->delete($id)) {
             redirect();
         } else {
             echo "Error deleting record.";
