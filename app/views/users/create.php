@@ -6,11 +6,11 @@
   <title>Create User</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen flex items-center justify-center p-6 bg-gradient-to-br from-purple-700 via-pink-500 to-red-500">
+<body class="min-h-screen flex items-center justify-center p-6 bg-gradient-to-br from-purple-700 via-indigo-600 to-blue-600">
 
-  <div class="backdrop-blur-md bg-white/20 p-10 rounded-2xl shadow-2xl w-full max-w-md border border-white/30">
-    <h1 class="text-4xl font-extrabold text-center mb-8 text-yellow-300 tracking-wider drop-shadow-lg">
-      Create User
+  <div class="backdrop-blur-xl bg-white/10 p-10 rounded-3xl shadow-2xl w-full max-w-md border border-white/30">
+    <h1 class="text-4xl font-extrabold text-center mb-8 text-yellow-300 drop-shadow-lg">
+      🌟 Create User
     </h1>
 
     <form action="<?= site_url('users/create'); ?>" method="POST" class="space-y-6">
@@ -43,9 +43,9 @@
       <!-- Submit Button -->
       <button 
         type="submit" 
-        class="w-full bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-3 px-4 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
+        class="w-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-purple-900 font-bold py-3 px-4 rounded-lg shadow-lg hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 transform hover:scale-105 transition duration-300"
       >
-        Save User
+        🚀 Save User
       </button>
     </form>
   </div>

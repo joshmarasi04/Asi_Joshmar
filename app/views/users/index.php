@@ -12,23 +12,27 @@
       background: linear-gradient(135deg, #1a0033, #001f4d, #003366);
       color: #fff;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
     }
 
     .dashboard-container {
+      width: 100%;
       max-width: 1200px;
-      margin: 50px auto;
-      padding: 25px;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 18px;
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(18px);
       box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+      padding: 30px;
     }
 
     .dashboard-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .dashboard-header h2 {
@@ -41,7 +45,7 @@
     .logout-btn {
       padding: 10px 20px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       background: linear-gradient(90deg, #ffea00, #ff8800, #ff0044);
       color: #fff;
       font-weight: 600;
@@ -72,9 +76,9 @@
 
     .table-card {
       background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(18px);
       border-radius: 15px;
       padding: 20px;
+      backdrop-filter: blur(18px);
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
