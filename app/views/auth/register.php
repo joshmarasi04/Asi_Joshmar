@@ -19,11 +19,11 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background: #0f0f1a;
+      background: linear-gradient(135deg, #6d28d9, #4f46e5, #2563eb);
       overflow: hidden;
     }
 
-    /* Animated background circles */
+    /* Floating circles (background) */
     .circles {
       position: absolute;
       width: 100%;
@@ -65,21 +65,26 @@
       position: relative;
       width: 420px;
       padding: 40px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 20px;
       backdrop-filter: blur(18px);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2),
+                  0 0 40px rgba(255, 200, 0, 0.3);
       z-index: 1;
     }
 
     .register h2 {
       text-align: center;
-      font-size: 2em;
-      font-weight: 600;
+      font-size: 2.2em;
+      font-weight: 700;
       margin-bottom: 25px;
-      color: #00ffa3;
-      text-shadow: 0 0 10px #00ffa3;
+      color: #fff;
+      text-shadow: 0 0 15px #facc15, 0 0 25px #f97316;
+    }
+
+    .register h2::before {
+      content: "🔥 ";
     }
 
     .inputBox {
@@ -93,14 +98,21 @@
       padding: 14px 45px 14px 15px;
       font-size: 1em;
       color: #fff;
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       outline: none;
       border-radius: 10px;
+      transition: 0.3s;
     }
 
     .inputBox input::placeholder {
-      color: #bbb;
+      color: #ddd;
+    }
+
+    .inputBox input:focus,
+    .inputBox select:focus {
+      border-color: #facc15;
+      box-shadow: 0 0 15px #facc15;
     }
 
     .toggle-password {
@@ -110,15 +122,15 @@
       transform: translateY(-50%);
       cursor: pointer;
       font-size: 1.1em;
-      color: #00ffa3;
+      color: #facc15;
     }
 
     .register button {
       width: 100%;
       padding: 14px;
       border: none;
-      background: linear-gradient(90deg, #00ffa3, #00e5ff);
-      color: #0f0f1a;
+      background: linear-gradient(90deg, #facc15, #f97316, #dc2626);
+      color: #fff;
       font-size: 1.1em;
       font-weight: 600;
       border-radius: 10px;
@@ -128,8 +140,8 @@
     }
 
     .register button:hover {
-      opacity: 0.8;
-      box-shadow: 0 0 15px #00ffa3;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #facc15, 0 0 30px #f97316;
     }
 
     .group {
@@ -139,7 +151,7 @@
 
     .group a {
       font-size: 0.95em;
-      color: #00e5ff;
+      color: #facc15;
       text-decoration: none;
     }
 
