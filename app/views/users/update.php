@@ -18,12 +18,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: radial-gradient(circle at top left, #1a0028, #0a0014 70%);
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6d28d9, #4f46e5, #2563eb);
       overflow: hidden;
     }
 
-    /* Animated background circles */
+    /* Floating circles (background) */
     .circles {
       position: absolute;
       width: 100%;
@@ -38,135 +38,126 @@
       list-style: none;
       width: 25px;
       height: 25px;
-      background: rgba(255, 0, 180, 0.15);
+      background: rgba(255, 255, 255, 0.1);
       animation: animate 20s linear infinite;
       bottom: -150px;
       border-radius: 50%;
-      filter: blur(8px);
     }
 
-    .circles li:nth-child(1) { left: 25%; width: 90px; height: 90px; background: rgba(255, 0, 180, 0.25); animation-duration: 15s; }
-    .circles li:nth-child(2) { left: 10%; width: 30px; height: 30px; background: rgba(162, 0, 255, 0.2); animation-duration: 10s; }
-    .circles li:nth-child(3) { left: 70%; width: 40px; height: 40px; background: rgba(255, 0, 180, 0.2); animation-duration: 20s; }
-    .circles li:nth-child(4) { left: 40%; width: 70px; height: 70px; background: rgba(162, 0, 255, 0.25); animation-duration: 18s; }
-    .circles li:nth-child(5) { left: 65%; width: 25px; height: 25px; background: rgba(255, 0, 180, 0.2); animation-duration: 12s; }
-    .circles li:nth-child(6) { left: 75%; width: 120px; height: 120px; background: rgba(162, 0, 255, 0.25); animation-duration: 25s; }
-    .circles li:nth-child(7) { left: 35%; width: 160px; height: 160px; background: rgba(255, 0, 180, 0.2); animation-duration: 35s; }
-    .circles li:nth-child(😎 { left: 50%; width: 30px; height: 30px; background: rgba(162, 0, 255, 0.2); animation-duration: 45s; }
-    .circles li:nth-child(9) { left: 20%; width: 20px; height: 20px; background: rgba(255, 0, 180, 0.15); animation-duration: 11s; }
-    .circles li:nth-child(10){ left: 85%; width: 150px; height: 150px; background: rgba(162, 0, 255, 0.3); animation-duration: 30s; }
+    .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-duration: 15s; }
+    .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-duration: 10s; }
+    .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-duration: 20s; }
+    .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-duration: 18s; }
+    .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-duration: 12s; }
+    .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-duration: 25s; }
+    .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-duration: 35s; }
+    .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-duration: 45s; }
+    .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-duration: 11s; }
+    .circles li:nth-child(10){ left: 85%; width: 150px; height: 150px; animation-duration: 30s; }
 
     @keyframes animate {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
+      100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
     }
 
-    .form-container {
+    /* Update Card */
+    .update-card {
       position: relative;
-      width: 380px;
+      width: 420px;
       padding: 40px;
-      border-radius: 15px;
-      background: rgba(30, 0, 50, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 0, 180, 0.3);
-      box-shadow: 0 0 20px rgba(255, 0, 180, 0.3),
-                  0 0 40px rgba(162, 0, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2),
+                  0 0 40px rgba(255, 200, 0, 0.3);
       z-index: 1;
-      text-align: center;
       color: #fff;
     }
 
-    .form-container h1 {
+    .update-card h1 {
       text-align: center;
-      font-size: 2em;
+      font-size: 2.2em;
       font-weight: 700;
-      color: #ff00b4;
       margin-bottom: 25px;
-      text-shadow: 0 0 15px #a200ff, 0 0 25px #ff00b4;
-      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 0 0 15px #facc15, 0 0 25px #f97316;
+    }
+
+    .update-card h1::before {
+      content: "⚙️ ";
     }
 
     .form-group {
-      margin-bottom: 18px;
       position: relative;
+      margin-bottom: 20px;
     }
 
     .form-group input,
     .form-group select {
       width: 100%;
-      padding: 12px 15px;
+      padding: 14px 45px 14px 15px;
       font-size: 1em;
-      border-radius: 8px;
-      border: 2px solid transparent;
-      margin-bottom: 18px;
-      background: rgba(255, 255, 255, 0.1);
       color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      outline: none;
+      border-radius: 10px;
       transition: 0.3s;
     }
 
     .form-group input::placeholder {
-      color: #aaa;
+      color: #ddd;
     }
 
     .form-group input:focus,
     .form-group select:focus {
-      outline: none;
-      border-color: #ff00b4;
-      box-shadow: 0 0 8px #a200ff;
-      background: rgba(255,255,255,0.15);
+      border-color: #facc15;
+      box-shadow: 0 0 15px #facc15;
     }
 
-    /* Password toggle icon */
     .toggle-password {
       position: absolute;
       right: 15px;
       top: 50%;
       transform: translateY(-50%);
       cursor: pointer;
-      color: #ff00b4;
-      z-index: 2;
+      font-size: 1.1em;
+      color: #facc15;
     }
 
     .btn-submit {
       width: 100%;
       padding: 14px;
-      background: linear-gradient(90deg, #a200ff, #ff00b4);
-      color: #fff;
       border: none;
-      border-radius: 8px;
+      background: linear-gradient(90deg, #facc15, #f97316, #dc2626);
+      color: #fff;
       font-size: 1.1em;
       font-weight: 600;
+      border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 0 15px rgba(162, 0, 255, 0.5);
+      text-transform: uppercase;
     }
 
     .btn-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 20px rgba(255, 0, 180, 0.😎, 0 0 40px rgba(162, 0, 255, 0.6);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #facc15, 0 0 30px #f97316;
     }
 
     .link-wrapper {
       text-align: center;
-      margin-top: 18px;
+      margin-top: 15px;
     }
 
-    .btn-link {
-      display: inline-block;
-      padding: 10px 18px;
-      background: none;
-      color: #a200ff;
+    .link-wrapper a {
+      font-size: 0.95em;
+      color: #facc15;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 500;
-      transition: 0.3s;
-      border: 1px solid #a200ff;
     }
 
-    .btn-link:hover {
-      background: #a200ff;
-      color: #fff;
-      box-shadow: 0 0 12px #ff00b4;
+    .link-wrapper a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -177,7 +168,7 @@
     <li></li><li></li><li></li><li></li><li></li>
   </ul>
 
-  <div class="form-container">
+  <div class="update-card">
     <h1>Update User</h1>
     <form action="<?=site_url('users/update/'.$user['id'])?>" method="POST">
       <div class="form-group">
@@ -204,7 +195,7 @@
       <button type="submit" class="btn-submit">Update User</button>
     </form>
     <div class="link-wrapper">
-      <a href="<?=site_url('/users'); ?>" class="btn-link">Return to Home</a>
+      <a href="<?=site_url('/users'); ?>">Return to Home</a>
     </div>
   </div>
 
@@ -222,4 +213,3 @@
   </script>
 </body>
 </html>
-cdnjs.cloudflare.com
